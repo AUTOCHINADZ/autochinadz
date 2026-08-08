@@ -9,10 +9,70 @@
 header{background:#080808;color:#fff;padding:18px 22px;border-bottom:3px solid #e21d25}
 .logo{font-size:26px;font-weight:900}.logo span{color:#e21d25}
 .wrap{max-width:1200px;margin:auto;padding:0 20px}
- .vehicles-title{
+
+.vehicles-title{
   font-size:32px;
   margin:35px 0 20px;
   font-weight:800;
+}
+
+.brands-section{
+  background:#fff;
+  padding:35px 0;
+  margin-bottom:20px;
+}
+
+.brands-section h2{
+  font-size:32px;
+  margin:0 0 25px;
+  font-weight:800;
+}
+
+.brands-list{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:15px;
+}
+
+.brand-card{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:12px;
+  padding:18px 10px;
+  text-align:center;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.brand-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 5px 18px #0002;
+}
+
+.brand-card img{
+  width:70px;
+  height:55px;
+  object-fit:contain;
+  margin-bottom:8px;
+}
+
+.brand-card span{
+  display:block;
+  font-weight:700;
+  font-size:14px;
+}
+
+@media(max-width:800px){
+  .brands-list{
+    grid-template-columns:repeat(4,1fr);
+  }
+}
+
+@media(max-width:520px){
+  .brands-list{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
 }
 .hero{background:#111;color:#fff;padding:55px 0}.hero h1{font-size:46px;margin:0 0 10px}.hero h1 span{color:#e21d25}.hero p{font-size:18px;color:#ddd}
 .filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;background:#fff;padding:18px;margin-top:-25px;border-radius:12px;box-shadow:0 4px 20px #0002}
