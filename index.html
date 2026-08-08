@@ -142,14 +142,16 @@ function populateFilters(){
 }
 function populateBrands(){
   const brands = [...new Set(
-    vehicles.map(v => v.brand_fr).filter(Boolean)
+    vehicles
+      .map(v => v.brand_fr || v.brand)
+      .filter(Boolean)
   )].sort();
 
-  document.getElementById("brands-list").innerHTML = brands.map(brand => `
-    <div class="brand-card" onclick="document.getElementById('brand').value='${esc(brand)}'; render();">
+  document.getElementById("brands-list").innerHTML = brands.map(brand =>
+    `<div class="brand-card" onclick="document.getElementById('brand').value='${esc(brand)}'; render();">
       <span>${esc(brand)}</span>
-    </div>
-  `).join("");
+    </div>`
+  ).join("");
 }
 function openDetail(id){
  const v=vehicles.find(x=>String(x.id)===String(id)); if(!v)return;
@@ -178,11 +180,17 @@ document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="
      api("vehicles?select=*&available=eq.true&order=created_at.desc"),
      api("vehicle_photos?select=vehicle_id,photo_url,sort_order&order=sort_order.asc")
    ]);
-   populateBrands(); populateFilters(); render();
+populateFilters();
+populateBrands();
+render();
+
+document.getElementById("status").textContent =
+    vehicles.length + " véhicule(s) disponible(s)";
  }catch(e){
-   console.error(e);
-   document.getElementById("status").textContent="Impossible de charger les données Supabase. Vérifiez la clé Publishable et les politiques RLS.";
- }
+    console.error("ERREUR SUPABASE :", e);
+    document.getElementById("status").textContent =
+        "Erreur de chargement : " + e.message;
+}
 })();
 
 </script>
