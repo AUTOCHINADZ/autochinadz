@@ -140,21 +140,16 @@ function populateFilters(){
  add("year",vehicles.map(x=>x.year),"Toutes les années");
  add("type",vehicles.map(x=>x.type),"Tous les types");
 }
-function render(){
- const q=document.getElementById("q").value.toLowerCase().trim(), b=document.getElementById("brand").value, y=document.getElementById("year").value, t=document.getElementById("type").value;
- const list=vehicles.filter(v=>(!q||((v.brand_fr||"")+" "+(v.model_fr||"")).toLowerCase().includes(q))&&(!b||v.brand_fr==b)&&(!y||String(v.year)==String(y))&&(!t||v.type==t));
- document.getElementById("status").textContent=list.length+" véhicule(s) disponible(s)";
- document.getElementById("list").innerHTML=list.map(v=>{
-   const img=photoFor(v.id)||placeholder();
-   return `<article class="card">
-    <img src="${esc(img)}" alt="${esc(v.brand_fr+" "+v.model_fr)}" onerror="this.src=placeholder()">
-    <div class="body"><h3>${esc(v.brand_fr)} ${esc(v.model_fr)}</h3>
-    <div class="muted">${esc(v.type||"")} ${v.gearbox_fr?"· "+esc(v.gearbox_fr):""}</div>
-    <div class="price">${esc(v.price||"Prix à confirmer")}</div>
-    <button class="btn" onclick="openDetail(${Number(v.id)})">Voir détails</button>
-    <a class="btn secondary" target="_blank" href="https://wa.me/213770230248">WhatsApp</a>
-    </div></article>`;
- }).join("");
+function populateBrands(){
+  const brands = [...new Set(
+    vehicles.map(v => v.brand_fr).filter(Boolean)
+  )].sort();
+
+  document.getElementById("brands-list").innerHTML = brands.map(brand => `
+    <div class="brand-card" onclick="document.getElementById('brand').value='${esc(brand)}'; render();">
+      <span>${esc(brand)}</span>
+    </div>
+  `).join("");
 }
 function openDetail(id){
  const v=vehicles.find(x=>String(x.id)===String(id)); if(!v)return;
@@ -183,12 +178,13 @@ document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="
      api("vehicles?select=*&available=eq.true&order=created_at.desc"),
      api("vehicle_photos?select=vehicle_id,photo_url,sort_order&order=sort_order.asc")
    ]);
-   populateFilters(); render();
+   populateBrands(); populateFilters(); render();
  }catch(e){
    console.error(e);
    document.getElementById("status").textContent="Impossible de charger les données Supabase. Vérifiez la clé Publishable et les politiques RLS.";
  }
 })();
+
 </script>
 </body>
 </html>
