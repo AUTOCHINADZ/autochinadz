@@ -5,97 +5,17 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AutoChinaDZ</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f5f7;color:#151515}
-header{background:#080808;color:#fff;padding:18px 22px;border-bottom:3px solid #e21d25}
-.logo{font-size:26px;font-weight:900}.logo span{color:#e21d25}
-.wrap{max-width:1200px;margin:auto;padding:0 20px}
-
-.vehicles-title{
-  font-size:32px;
-  margin:35px 0 20px;
-  font-weight:800;
-}
-
-.brands-section{
-  background:#fff;
-  padding:35px 0;
-  margin-bottom:20px;
-}
-
-.brands-section h2{
-  font-size:32px;
-  margin:0 0 25px;
-  font-weight:800;
-}
-
-.brands-list{
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:15px;
-}
-
-.brand-card{
-  background:#fff;
-  border:1px solid #eee;
-  border-radius:12px;
-  padding:18px 10px;
-  text-align:center;
-  cursor:pointer;
-  transition:0.2s;
-}
-
-.brand-card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 5px 18px #0002;
-}
-
-.brand-card img{
-  width:70px;
-  height:55px;
-  object-fit:contain;
-  margin-bottom:8px;
-}
-
-.brand-card span{
-  display:block;
-  font-weight:700;
-  font-size:14px;
-}
-
-@media(max-width:800px){
-  .brands-list{
-    grid-template-columns:repeat(4,1fr);
-  }
-
-.hero{background:#111;color:#fff;padding:55px 0}.hero h1{font-size:46px;margin:0 0 10px}.hero h1 span{color:#e21d25}.hero p{font-size:18px;color:#ddd}
-.filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;background:#fff;padding:18px;margin-top:-25px;border-radius:12px;box-shadow:0 4px 20px #0002}
-input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:7px;background:#fff}
-.status{margin:22px 0;padding:14px;background:#fff;border-radius:8px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-bottom:40px}
-.card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 3px 18px #0002}.card img{width:100%;height:230px;object-fit:cover;background:#ddd}
-.body{padding:17px}.body h3{margin:0 0 8px;font-size:20px}.muted{color:#666}.price{color:#e21d25;font-size:21px;font-weight:bold;margin:14px 0}
-.btn{border:0;background:#e21d25;color:#fff;padding:11px 15px;border-radius:7px;text-decoration:none;font-weight:bold;cursor:pointer;display:inline-block}
-.btn.secondary{background:#222}
-.modal{display:none;position:fixed;inset:0;background:#000b;z-index:9999;overflow:auto;padding:20px}
-.panel{max-width:900px;margin:20px auto;background:#fff;border-radius:14px;padding:22px;position:relative}
-.close{position:absolute;right:14px;top:14px;border:0;background:#eee;border-radius:7px;padding:8px 12px;font-size:18px;cursor:pointer}
-.detail-img{width:100%;height:390px;object-fit:cover;border-radius:10px;background:#eee}
-.specs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:15px}.spec{background:#f5f5f5;padding:13px;border-radius:8px}.spec b{display:block;margin-bottom:4px}
-@media(max-width:800px){.grid{grid-template-columns:1fr 1fr}.filters{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.grid,.filters,.specs{grid-template-columns:1fr}.hero h1{font-size:34px}.detail-img{height:240px}.panel{margin:0 auto;padding:16px}}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f5f7;color:#151515}header{background:#080808;color:#fff;padding:18px 22px;border-bottom:3px solid #e21d25}.logo{font-size:26px;font-weight:900}.logo span{color:#e21d25}.wrap{max-width:1200px;margin:auto;padding:0 20px}.hero{background:#111;color:#fff;padding:55px 0}.hero h1{font-size:46px;margin:0 0 10px}.hero h1 span{color:#e21d25}.hero p{font-size:18px;color:#ddd}.brands-section{background:#fff;padding:35px 0;margin-bottom:20px}.brands-section h2,.vehicles-title{font-size:32px;margin:0 0 25px;font-weight:800}.vehicles-title{margin:35px 0 20px}.brands-list{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.brand-card{background:#fff;border:1px solid #e7e7e7;border-radius:12px;padding:16px 10px;text-align:center;cursor:pointer;font-weight:700}.brand-card.active{border-color:#e21d25;color:#e21d25}.filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;background:#fff;padding:18px;border-radius:12px;box-shadow:0 4px 20px #0002}input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:7px;background:#fff;font-size:15px}.status{margin:22px 0;padding:14px;background:#fff;border-radius:8px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-bottom:40px}.card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 3px 18px #0002}.card img{width:100%;height:220px;object-fit:cover;background:#ddd}.body{padding:17px}.body h3{margin:0 0 8px;font-size:20px}.muted{color:#666}.price{color:#e21d25;font-size:20px;font-weight:bold;margin:12px 0}.btn{border:0;background:#e21d25;color:#fff;padding:11px 15px;border-radius:7px;text-decoration:none;font-weight:bold;cursor:pointer;display:inline-block}.modal{display:none;position:fixed;inset:0;background:#000b;z-index:9999;overflow:auto;padding:20px}.panel{max-width:900px;margin:20px auto;background:#fff;border-radius:14px;padding:22px;position:relative}.close{position:absolute;right:14px;top:14px;border:0;background:#eee;border-radius:7px;padding:8px 12px;font-size:18px;cursor:pointer}.detail-img{width:100%;height:390px;object-fit:cover;border-radius:10px;background:#eee}.specs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:15px}.spec{background:#f5f5f5;padding:13px;border-radius:8px}.spec b{display:block;margin-bottom:4px}.empty{grid-column:1/-1;background:#fff;padding:25px;border-radius:12px;text-align:center;color:#666}
+@media(max-width:800px){.brands-list{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:1fr 1fr}.filters{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.brands-list{grid-template-columns:repeat(2,1fr)}.grid,.filters,.specs{grid-template-columns:1fr}.hero{padding:42px 0}.hero h1{font-size:38px}.detail-img{height:240px}.panel{margin:0 auto;padding:16px}.brands-section h2,.vehicles-title{font-size:30px}.card img{height:210px}}
 </style>
 </head>
 <body>
 <header><div class="wrap"><div class="logo">AUTO <span>CHINA</span> DZ</div></div></header>
 <section class="hero"><div class="wrap"><h1>Auto<span>ChinaDZ</span></h1><p>Véhicules, importation et solutions automobiles depuis la Chine.</p></div></section>
-<section class="brands-section">
-<div class="wrap">
-<h2>Nos marques</h2>
-<div id="brands-list" class="brands-list"></div>
-</div>
-</section>
+<section class="brands-section"><div class="wrap"><h2>Nos marques</h2><div id="brands-list" class="brands-list"></div></div></section>
 <main class="wrap">
- <h2 class="vehicles-title">Véhicules disponibles</h2>
+<h2 class="vehicles-title">Véhicules disponibles</h2>
 <div class="filters">
 <input id="q" placeholder="Rechercher une marque ou un modèle">
 <select id="brand"><option value="">Toutes les marques</option></select>
@@ -105,224 +25,23 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:7px;bac
 <div id="status" class="status">Chargement des véhicules...</div>
 <div id="list" class="grid"></div>
 </main>
-
-<div id="modal" class="modal">
- <div class="panel">
-  <button class="close" onclick="closeModal()">✕</button>
-  <div id="detail"></div>
- </div>
-</div>
-
+<div id="modal" class="modal"><div class="panel"><button class="close" onclick="closeModal()">✕</button><div id="detail"></div></div></div>
 <script>
 const SUPABASE_URL="https://dddoifppwastcsieaamc.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY="sb_publishable_aQCzbezOTkTn6KEnAwNrGA_ssrxd_6d";
-const BUCKET=SUPABASE_URL+"/storage/v1/object/public/vehicle-photos/";
-let vehicles=[], photos=[];
-
-async function api(path){
- const r=await fetch(SUPABASE_URL+"/rest/v1/"+path,{
-   headers:{apikey:SUPABASE_PUBLISHABLE_KEY,Authorization:"Bearer "+SUPABASE_PUBLISHABLE_KEY}
- });
- if(!r.ok) throw new Error(await r.text());
- return r.json();
-}
-function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
-function photoFor(id){
- const p=photos.find(x=>String(x.vehicle_id)===String(id));
- return p?.photo_url || "";
-}
-function placeholder(){
- return "data:image/svg+xml;charset=UTF-8,"+encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' width='900' height='500'><rect width='100%' height='100%' fill='#ddd'/><text x='50%' y='50%' text-anchor='middle' font-family='Arial' font-size='28' fill='#666'>Photo non disponible</text></svg>");
-}
-function populateFilters(){
- const add=(id,vals,label)=>{document.getElementById(id).innerHTML="<option value=''>"+label+"</option>"+[...new Set(vals.filter(Boolean))].sort().map(x=>"<option>"+esc(x)+"</option>").join("")};
- add("brand",vehicles.map(x=>x.brand_fr),"Toutes les marques");
- add("year",vehicles.map(x=>x.year),"Toutes les années");
- add("type",vehicles.map(x=>x.type),"Tous les types");
-}
-function populateBrands() {
-  const brandModels = {
-
-    "Audi": [
-      "Audi A1", "A4", "Audi A4L", "A5", "A5L", "A6", "Audi A8",
-      "Audi Q3", "Q3 Sportback", "Audi Q5", "Audi Q5L", "Q5 Sportback",
-      "Audi Q6F", "Audi Q6L", "Audi Q7", "Q8"
-    ],
-
-    "Skoda": [
-      "Kamiq", "Fabia", "Karoq", "Octavia", "Skoda Superb"
-    ],
-
-    "SEAT": [
-      "SEAT Arona", "SEAT Ateca", "SEAT Ibiza", "SEAT Leon"
-    ],
-
-    "BMW": [
-      "BMW iX3", "BMW 5 Series", "BMW iX1", "BMW i5", "BMW X5",
-      "BMW X1", "BMW X3", "BMW 3 Series", "BMW 4 Series", "BMW i3"
-    ],
-
-    "Mercedes-Benz": [
-      "Mercedes-Benz A-Class", "Mercedes-Benz C-Class",
-      "Mercedes-Benz E-Class", "Mercedes-Benz GLB",
-      "Mercedes-Benz GLC", "Mercedes-Benz GLE", "Mercedes-Benz S-Class"
-    ],
-
-    "Volkswagen": [
-      "POLO", "Caddy", "GOLF 7", "GOLF 8", "GOLF 8.5", "Bora",
-      "Magotan", "Lavida", "Passat", "T-Cross", "T-Roc", "Tiguan L",
-      "Sagitar", "Tayron", "Tharu", "Teramont", "Touareg"
-    ],
-
-    "Cupra": [
-      "Cupra Formentor", "Cupra Terramar", "Cupra Tavascan",
-      "Cupra Ateca", "Cupra Leon"
-    ],
-
-    "Peugeot": [
-      "Peugeot 206", "Peugeot 2008", "Peugeot 508", "Peugeot 408",
-      "Peugeot 5008", "Peugeot 408X"
-    ],
-
-    "Citroën": [
-      "Berlingo", "Citroën C3", "Citroën C3-XR", "Citroën C4",
-      "Citroën Versailles C5 X", "Citroën C5 Aircross", "Citroën Jumper"
-    ],
-
-    "Renault": [
-      "Renault Clio", "Taliant", "Arkana", "Captur", "Kangoo",
-      "Megane", "Renault Rafale", "Master"
-    ],
-
-    "Dacia": [
-      "Sandero", "Stepway", "Logan", "Duster"
-    ],
-
-    "Toyota": [
-      "Toyota RAV4", "Toyota Frontlander", "Toyota Granvia",
-      "Toyota Highlander", "Toyota Crown Kluger", "Toyota Corolla",
-      "Toyota Corolla Cross", "Toyota Camry", "Toyota Levin",
-      "Toyota Land Cruiser Prado", "Toyota Sienna", "Toyota Wildlander",
-      "Toyota Alphard"
-    ],
-
-    "Nissan": [
-      "Nissan X-Trail", "Nissan Qashqai", "Navara", "Pathfinder"
-    ],
-
-    "Kia": [
-      "KX1", "K3", "K5", "Carnival", "Picanto", "Seltos", "Sonet",
-      "Sorento", "Sportage"
-    ],
-
-    "Hyundai": [
-      "Tucson", "Elantra", "Sonata", "Santa Fe", "Elantra"
-    ],
-
-    "Jetta": [
-      "Jetta VS5", "Jetta VA3", "Jetta VA7",
-      "Jetta VS7", "Jetta VS8"
-    ],
-
-    "Livan": [
-      "Livan X3 Pro"
-    ],
-
-    "Geely": [
-      "Geely Cityray", "Geely Coolray", "Geely Emgrand", "Geely Cowboy",
-      "Geely Icon", "Geely Starray", "Geely Preface", "Geely Monjaro",
-      "Geely Okavango Pro", "Geely Okavango"
-    ],
-
-    "BYD": [
-      "Dolphin", "Hiace 06", "BYD Qin L DM-i", "Dynasty", "Song Pro",
-      "Seal", "BYD Song Plus DM-i", "BYD Yuan Plus", "BYD Tang DM-i"
-    ],
-
-    "MG": [
-      "MG 3", "MG HS", "MG ZS", "MG3", "MG5", "MG7", "MG6",
-      "MG RX9", "MG Cyberster", "MG ES5"
-    ],
-
-    "Roewe": [
-      "Roewe i5", "Roewe i6", "Roewe RX5", "Roewe iMAX8", "Roewe RX9"
-    ]
-  };
-
-  const container = document.getElementById("brands-list");
-
-  container.innerHTML = Object.keys(brandModels).map(brand => `
-    <div class="brand-card" onclick="showModels('${brand}')">
-      <span>${esc(brand)}</span>
-    </div>
-  `).join("");
-
-  window.brandModels = brandModels;
-}
-
-function showModels(brand) {
-  const models = window.brandModels[brand] || [];
-
-  document.getElementById("brands-list").innerHTML = `
-    <div style="grid-column:1/-1">
-      <h3>${esc(brand)}</h3>
-
-      <div class="brands-list">
-        ${models.map(model => `
-          <div class="brand-card" onclick="selectModel('${brand}','${model}')">
-            <span>${esc(model)}</span>
-          </div>
-        `).join("")}
-      </div>
-    </div>
-  `;
-}
-
-
-function selectModel(brand, model) {
-  document.getElementById("q").value = model;
-  render();
-}
-function openDetail(id){
- const v=vehicles.find(x=>String(x.id)===String(id)); if(!v)return;
- const img=photoFor(id)||placeholder();
- const specs=[
- ["Année / السنة",v.year],["Type / النوع",v.type],["Moteur / المحرك",v.engine_fr],
- ["Puissance / القوة",v.power],["Couple / عزم الدوران",v.torque],
- ["Boîte / علبة السرعات",v.gearbox_fr],["Places / المقاعد",v.seats],["Prix / السعر",v.price]
- ].filter(x=>x[1]!==null&&x[1]!==undefined&&x[1]!=="");
- document.getElementById("detail").innerHTML=
- `<h2>${esc(v.brand_fr)} ${esc(v.model_fr)}</h2>
-  <p class="muted">Fiche détaillée / بطاقة السيارة</p>
-  <img class="detail-img" src="${esc(img)}" onerror="this.src=placeholder()" alt="">
-  <h3>Caractéristiques / المواصفات</h3>
-  <div class="specs">${specs.map(x=>`<div class="spec"><b>${esc(x[0])}</b>${esc(x[1])}</div>`).join("")}</div>
-  <p style="margin-top:20px"><a class="btn" target="_blank" href="https://wa.me/213770230248">Contacter sur WhatsApp</a></p>`;
- document.getElementById("modal").style.display="block";
-}
+let vehicles=[],photos=[];
+async function api(path){const r=await fetch(SUPABASE_URL+"/rest/v1/"+path,{headers:{apikey:SUPABASE_PUBLISHABLE_KEY,Authorization:"Bearer "+SUPABASE_PUBLISHABLE_KEY}});if(!r.ok)throw new Error(await r.text());return r.json()}
+function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function placeholder(){return "data:image/svg+xml;charset=UTF-8,"+encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' width='900' height='500'><rect width='100%' height='100%' fill='#ddd'/><text x='50%' y='50%' text-anchor='middle' font-family='Arial' font-size='28' fill='#666'>Photo non disponible</text></svg>")}
+function photoFor(id){const p=photos.find(x=>String(x.vehicle_id)===String(id));return p?.photo_url||p?.url||""}
+function uniq(vals){return [...new Set(vals.filter(v=>v!==null&&v!==undefined&&String(v).trim()!=="").map(v=>String(v)))].sort((a,b)=>a.localeCompare(b,"fr",{numeric:true}))}
+function populateFilters(){const add=(id,vals,label)=>{document.getElementById(id).innerHTML=`<option value="">${label}</option>`+uniq(vals).map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("")};add("brand",vehicles.map(v=>v.brand_fr||v.brand),"Toutes les marques");add("year",vehicles.map(v=>v.year),"Toutes les années");add("type",vehicles.map(v=>v.type),"Tous les types")}
+function populateBrands(){const brands=uniq(vehicles.map(v=>v.brand_fr||v.brand));document.getElementById("brands-list").innerHTML=brands.map(b=>`<button class="brand-card" data-brand="${esc(b)}">${esc(b)}</button>`).join("");document.querySelectorAll(".brand-card").forEach(btn=>btn.addEventListener("click",()=>{const sel=document.getElementById("brand");sel.value=btn.dataset.brand;document.querySelectorAll(".brand-card").forEach(x=>x.classList.toggle("active",x===btn));render();document.getElementById("list").scrollIntoView({behavior:"smooth",block:"start"})}))}
+function render(){const q=document.getElementById("q").value.trim().toLowerCase();const brand=document.getElementById("brand").value;const year=document.getElementById("year").value;const type=document.getElementById("type").value;const filtered=vehicles.filter(v=>{const b=String(v.brand_fr||v.brand||"");const m=String(v.model_fr||v.model||"");return(!q||(b+" "+m).toLowerCase().includes(q))&&(!brand||b===brand)&&(!year||String(v.year||"")===year)&&(!type||String(v.type||"")===type)});document.getElementById("status").textContent=`${filtered.length} véhicule(s) affiché(s) sur ${vehicles.length}`;const list=document.getElementById("list");if(!filtered.length){list.innerHTML='<div class="empty">Aucun véhicule ne correspond à votre recherche.</div>';return}list.innerHTML=filtered.map(v=>{const b=v.brand_fr||v.brand||"";const m=v.model_fr||v.model||"";const img=photoFor(v.id)||placeholder();const meta=[v.year,v.type,v.fuel||v.fuel_fr,v.transmission||v.gearbox_fr].filter(Boolean).join(" · ");return `<article class="card"><img src="${esc(img)}" onerror="this.onerror=null;this.src=placeholder()" alt="${esc(b+' '+m)}"><div class="body"><h3>${esc(b)} ${esc(m)}</h3><p class="muted">${esc(meta||'Informations en cours de complétion')}</p>${v.price?`<div class="price">${esc(v.price)}</div>`:""}<button class="btn" onclick="openDetail('${esc(v.id)}')">Voir détails</button></div></article>`}).join("")}
+function openDetail(id){const v=vehicles.find(x=>String(x.id)===String(id));if(!v)return;const b=v.brand_fr||v.brand||"";const m=v.model_fr||v.model||"";const specs=[["Année / السنة",v.year],["Type / النوع",v.type],["Carburant / الوقود",v.fuel||v.fuel_fr],["Moteur / المحرك",v.engine||v.engine_fr],["Puissance / القوة",v.power],["Boîte / علبة السرعات",v.transmission||v.gearbox_fr],["Places / المقاعد",v.seats],["Prix / السعر",v.price]].filter(x=>x[1]!==null&&x[1]!==undefined&&x[1]!=="");document.getElementById("detail").innerHTML=`<h2>${esc(b)} ${esc(m)}</h2><p class="muted">Fiche détaillée / بطاقة السيارة</p><img class="detail-img" src="${esc(photoFor(v.id)||placeholder())}" onerror="this.onerror=null;this.src=placeholder()" alt=""><h3>Caractéristiques / المواصفات</h3><div class="specs">${specs.map(x=>`<div class="spec"><b>${esc(x[0])}</b>${esc(x[1])}</div>`).join("")}</div>`;document.getElementById("modal").style.display="block"}
 function closeModal(){document.getElementById("modal").style.display="none"}
-["q","brand","year","type"].forEach(id=>document.getElementById(id).addEventListener("input",render));
-document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
-
-(async()=>{
- try{
-   [vehicles,photos]=await Promise.all([
-     api("vehicles?select=*&available=eq.true&order=created_at.desc"),
-     api("vehicle_photos?select=vehicle_id,photo_url,sort_order&order=sort_order.asc")
-   ]);
-populateFilters();
-populateBrands();
-render();
-
-document.getElementById("status").textContent =
-    vehicles.length + " véhicule(s) disponible(s)";
- }catch(e){
-    console.error("ERREUR SUPABASE :", e);
-    document.getElementById("status").textContent =
-        "Erreur de chargement : " + e.message;
-}
-})();
-
+["q","brand","year","type"].forEach(id=>document.getElementById(id).addEventListener("input",()=>{if(id==="brand")document.querySelectorAll(".brand-card").forEach(x=>x.classList.toggle("active",x.dataset.brand===document.getElementById("brand").value));render()}));document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
+(async()=>{try{vehicles=await api("vehicles?select=*&order=brand_fr.asc,model_fr.asc");try{photos=await api("vehicle_photos?select=*&order=sort_order.asc")}catch(photoErr){console.warn("Photos non chargées",photoErr);photos=[]}populateFilters();populateBrands();render()}catch(e){console.error(e);document.getElementById("status").textContent="Erreur de chargement des véhicules. Veuillez actualiser la page."}})();
 </script>
 </body>
 </html>
